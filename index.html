@@ -4,150 +4,331 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>3i Reborn - Istikmal Syariah</title>
+
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f8f9fa;
+      background: #f5f7fb;
       color: #222;
     }
+
     header {
-      background: linear-gradient(135deg, #0d6efd, #0a58ca);
+      background: linear-gradient(135deg, #0d6efd, #084298);
       color: white;
+      padding: 70px 20px;
       text-align: center;
-      padding: 50px 20px;
     }
+
     header h1 {
+      font-size: 34px;
       margin: 0;
-      font-size: 28px;
     }
+
     header p {
-      margin-top: 10px;
+      max-width: 800px;
+      margin: 15px auto;
       font-size: 16px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      opacity: 0.9;
+      line-height: 1.6;
+      opacity: 0.95;
     }
-    .cta-btn {
+
+    .cta-area {
+      margin-top: 25px;
+    }
+
+    .btn {
       display: inline-block;
-      margin-top: 20px;
-      background: #ffc107;
-      color: #000;
-      padding: 12px 25px;
-      border-radius: 8px;
+      padding: 13px 26px;
+      border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
+      margin: 8px;
+      transition: 0.2s;
     }
+
+    .btn-primary {
+      background: #ffc107;
+      color: #000;
+    }
+
+    .btn-primary:hover {
+      background: #ffb300;
+    }
+
+    .btn-secondary {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.5);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.25);
+    }
+
     section {
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
-      padding: 40px 20px;
+      padding: 50px 20px;
     }
+
     .box {
       background: white;
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 25px;
+      border-radius: 16px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
+
     h2 {
-      font-size: 20px;
-      margin-bottom: 10px;
       color: #0d6efd;
+      margin-top: 0;
+      font-size: 22px;
     }
+
+    p {
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
     ul {
       padding-left: 20px;
-      line-height: 1.6;
+      line-height: 1.8;
+      font-size: 15px;
     }
-    footer {
-      background: #222;
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 15px;
+    }
+
+    .card {
+      background: #f8f9fa;
+      padding: 18px;
+      border-radius: 14px;
+      border: 1px solid #e6e6e6;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #198754;
+      font-size: 16px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #198754;
       color: white;
+      padding: 5px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .faq-item {
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 12px;
+    }
+
+    .faq-item strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #0d6efd;
+    }
+
+    footer {
+      background: #111;
+      color: #ddd;
       text-align: center;
-      padding: 25px 15px;
+      padding: 30px 15px;
       font-size: 14px;
     }
-    .highlight {
+
+    /* Floating WA Button */
+    .wa-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50px;
       font-weight: bold;
-      color: #198754;
+      text-decoration: none;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      z-index: 999;
+    }
+
+    .wa-float:hover {
+      background: #1ebe5b;
+    }
+
+    .small {
+      font-size: 13px;
+      opacity: 0.9;
     }
   </style>
 </head>
+
 <body>
 
   <header>
     <h1>3i Reborn - Istikmal Syariah</h1>
     <p>
-      Program perlindungan keluarga berbasis syariah + peluang income tambahan  
-      melalui komunitas dan sistem bimbingan.
+      Solusi perlindungan keluarga berbasis syariah + peluang penghasilan tambahan  
+      dengan sistem komunitas, mentoring, dan pembinaan leader.
     </p>
-    <a class="cta-btn" href="https://wa.me/62XXXXXXXXXXX" target="_blank">
-      Konsultasi Gratis via WhatsApp
-    </a>
+
+    <div class="cta-area">
+      <a class="btn btn-primary" 
+         href="https://wa.me/6285218453131?text=Halo%20Admin%20Nganggur%20Preneur%20Akademi,%20saya%20mau%20konsultasi%20tentang%203i%20Reborn%20Istikmal%20Syariah." 
+         target="_blank">
+        Konsultasi Gratis Sekarang
+      </a>
+
+      <a class="btn btn-secondary" 
+         href="https://wa.me/6282240001731?text=Halo,%20saya%20mau%20follow%20up%20info%203i%20Reborn%20Istikmal%20Syariah." 
+         target="_blank">
+        WA Follow Up
+      </a>
+    </div>
+
+    <p class="small">📌 Admin Resmi: Nganggur Preneur Akademi</p>
   </header>
 
   <section>
     <div class="box">
-      <h2>Kenapa Banyak Orang Ragu Join?</h2>
+      <span class="badge">FAKTA LAPANGAN</span>
+      <h2>Kenapa Banyak Orang Tidak Mau Join?</h2>
       <ul>
-        <li>Trauma terhadap MLM / pengalaman buruk sebelumnya.</li>
-        <li>Takut gagal karena merasa tidak bisa jualan atau tidak punya relasi.</li>
-        <li>Kurang paham konsep proteksi & perencanaan keuangan.</li>
-        <li>Kurang percaya karena belum melihat bukti nyata.</li>
-        <li>Merasa belum butuh atau masih fokus pada kebutuhan harian.</li>
+        <li>Trauma terhadap MLM / bisnis jaringan sebelumnya.</li>
+        <li>Takut tidak bisa ngajak orang atau tidak pede bicara.</li>
+        <li>Kurang paham konsep proteksi & investasi syariah.</li>
+        <li>Belum percaya karena belum lihat bukti nyata.</li>
+        <li>Merasa belum butuh atau masih fokus kebutuhan harian.</li>
       </ul>
     </div>
 
     <div class="box">
-      <h2>Kenapa Orang Mau Join 3i Reborn?</h2>
-      <ul>
-        <li>Ingin penghasilan tambahan dan jalan keluar finansial.</li>
-        <li>Ingin sistem yang <span class="highlight">halal dan syariah</span>.</li>
-        <li>Melihat bukti: claim cair, income leader, komunitas aktif.</li>
-        <li>Ingin lingkungan positif dan support system.</li>
-        <li>Ingin bertumbuh menjadi leader dan membangun tim.</li>
-      </ul>
+      <span class="badge">ALASAN UTAMA</span>
+      <h2>Kenapa Orang Akhirnya Mau Join?</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>💰 Butuh Penghasilan Tambahan</h3>
+          <p>Banyak orang capek kerja keras tapi hidup tetap segitu-gitu aja.</p>
+        </div>
+
+        <div class="card">
+          <h3>🕌 Konsep Syariah & Halal</h3>
+          <p>Orang ingin sistem keuangan yang lebih tenang dan jauh dari riba.</p>
+        </div>
+
+        <div class="card">
+          <h3>📌 Ada Bukti Nyata</h3>
+          <p>Claim cair, income leader, komunitas aktif, dan testimoni real.</p>
+        </div>
+
+        <div class="card">
+          <h3>🤝 Ada Komunitas & Mentoring</h3>
+          <p>Bukan dilepas, tapi dibimbing sampai bisa dan naik level.</p>
+        </div>
+      </div>
     </div>
 
     <div class="box">
-      <h2>Solusi Untuk yang Belum Mau Join</h2>
-      <ul>
-        <li>Edukasi dulu, bukan memaksa join.</li>
-        <li>Mulai dari kebutuhan: proteksi keluarga dan dana masa depan.</li>
-        <li>Bangun trust lewat bukti nyata dan testimoni.</li>
-        <li>Tawarkan opsi jadi nasabah dulu, baru peluang bisnis.</li>
-        <li>Follow up dengan pendekatan santai dan konsisten.</li>
-      </ul>
-    </div>
-
-    <div class="box">
-      <h2>Cara Mempertahankan Member Agar Jadi Leader</h2>
-      <ul>
-        <li>Buat member cepat merasakan hasil kecil (quick win).</li>
-        <li>Berikan SOP jelas: script, cara follow up, cara presentasi.</li>
-        <li>Bangun bonding tim (bukan hanya transaksi).</li>
-        <li>Beri peran dan tanggung jawab agar merasa dibutuhkan.</li>
-        <li>Berikan penghargaan & pengakuan atas progres.</li>
-      </ul>
-    </div>
-
-    <div class="box">
-      <h2>Siap Mulai?</h2>
+      <span class="badge">SOLUSI STRATEGIS</span>
+      <h2>Solusi Untuk Orang yang Belum Mau Join</h2>
       <p>
-        Kalau kamu ingin mulai dari nol, kamu tidak sendiri.  
-        Ada sistem training, mentoring, dan komunitas yang siap bantu.
+        Orang yang menolak bukan berarti tidak cocok.  
+        Mereka hanya <b>belum siap</b> atau <b>belum paham</b>.
       </p>
-      <a class="cta-btn" href="https://wa.me/62XXXXXXXXXXX" target="_blank">
-        Klik untuk Konsultasi & Gabung
+
+      <ul>
+        <li>Mulai dari edukasi dulu, bukan maksa join.</li>
+        <li>Tawarkan opsi jadi nasabah dulu (proteksi keluarga).</li>
+        <li>Bangun trust lewat cerita nyata dan testimoni.</li>
+        <li>Follow up halus, jangan agresif.</li>
+        <li>Gunakan pendekatan kebutuhan: keluarga, kesehatan, masa depan anak.</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <span class="badge">LEADERSHIP</span>
+      <h2>Strategi Mempertahankan Member Agar Jadi Leader</h2>
+      <ul>
+        <li><b>Quick Win 7 Hari:</b> bantu member dapat hasil kecil (closing/presentasi).</li>
+        <li><b>SOP Jelas:</b> script, cara follow up, cara presentasi, langkah harian.</li>
+        <li><b>Bonding Tim:</b> buat mereka merasa dihargai dan didukung.</li>
+        <li><b>Target Realistis:</b> fokus pada aktivitas, bukan hanya hasil.</li>
+        <li><b>Recognition:</b> apresiasi progress sekecil apapun.</li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <span class="badge">FAQ</span>
+      <h2>Pertanyaan yang Sering Ditanyakan</h2>
+
+      <div class="faq-item">
+        <strong>Apakah ini MLM?</strong>
+        <p>
+          Ini program berbasis sistem komunitas. Fokusnya proteksi syariah + peluang income dari edukasi & tim.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Kalau saya tidak pandai bicara, bisa?</strong>
+        <p>
+          Bisa. Kamu akan dibimbing dengan script, mentoring, dan sistem follow up.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Harus punya banyak teman dulu?</strong>
+        <p>
+          Tidak. Kamu cukup mulai dari circle kecil, lalu belajar membangun jaringan perlahan.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Apakah ada training?</strong>
+        <p>
+          Ada. Kamu akan masuk komunitas pembinaan agar berkembang sampai level leader.
+        </p>
+      </div>
+    </div>
+
+    <div class="box" style="text-align:center;">
+      <h2>Siap Mulai Perubahan?</h2>
+      <p>
+        Kalau kamu serius ingin membangun masa depan finansial yang lebih aman dan halal,  
+        kamu bisa mulai dari konsultasi dulu.
+      </p>
+
+      <a class="btn btn-primary" 
+         href="https://wa.me/6285218453131?text=Halo%20Admin%20Nganggur%20Preneur%20Akademi,%20saya%20mau%20konsultasi%20tentang%203i%20Reborn%20Istikmal%20Syariah." 
+         target="_blank">
+        Klik Konsultasi Sekarang
       </a>
     </div>
   </section>
 
   <footer>
     © 2026 - 3i Reborn | Istikmal Syariah <br>
-    Konsultasi & Informasi Resmi via WhatsApp
+    Admin: Nganggur Preneur Akademi <br>
+    Konsultasi via WhatsApp
   </footer>
+
+  <!-- Floating WA Button -->
+  <a class="wa-float"
+     href="https://wa.me/6285218453131?text=Halo%20Admin%20Nganggur%20Preneur%20Akademi,%20saya%20mau%20konsultasi%20tentang%203i%20Reborn%20Istikmal%20Syariah."
+     target="_blank">
+    💬 Chat Admin
+  </a>
 
 </body>
 </html>
