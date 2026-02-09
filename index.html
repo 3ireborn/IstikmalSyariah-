@@ -3,332 +3,429 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>3i Reborn - Istikmal Syariah</title>
-
+  <title>3iLC Zoom - 3i Reborn | Istikmal Syariah</title>
   <style>
-    body {
+    :root{
+      --bg:#0b1020;
+      --card:#111a33;
+      --muted:#9fb0ff;
+      --accent:#ffc107;
+      --good:#25D366;
+      --danger:#ff4d4f;
+      --text:#eaf0ff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f5f7fb;
-      color: #222;
+      background: radial-gradient(1200px 600px at 20% 10%, #1b2a66 0%, var(--bg) 60%);
+      color:var(--text);
     }
-
-    header {
-      background: linear-gradient(135deg, #0d6efd, #084298);
-      color: white;
-      padding: 70px 20px;
-      text-align: center;
+    .wrap{max-width:1080px;margin:0 auto;padding:26px 16px 80px;}
+    .hero{
+      padding:28px 18px;
+      border:1px solid rgba(255,255,255,.08);
+      background: linear-gradient(135deg, rgba(255,193,7,.12), rgba(13,110,253,.12));
+      border-radius:18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.35);
     }
-
-    header h1 {
-      font-size: 34px;
-      margin: 0;
+    .topline{
+      display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:10px;
+      font-size:13px;color:#cfe0ff;opacity:.95;
     }
-
-    header p {
-      max-width: 800px;
-      margin: 15px auto;
-      font-size: 16px;
-      line-height: 1.6;
-      opacity: 0.95;
+    .pill{
+      display:inline-block;padding:6px 10px;border-radius:999px;
+      border:1px solid rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
     }
-
-    .cta-area {
-      margin-top: 25px;
+    h1{margin:10px 0 8px;font-size:30px;line-height:1.15}
+    .sub{margin:0;color:#d8e4ff;opacity:.95;line-height:1.65;max-width:880px}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:16px;margin-top:18px;
     }
-
-    .btn {
-      display: inline-block;
-      padding: 13px 26px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 8px;
-      transition: 0.2s;
+    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+    .card{
+      background: rgba(17,26,51,.85);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;
+      padding:18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.25);
     }
-
-    .btn-primary {
-      background: #ffc107;
-      color: #000;
+    .card h2{margin:0 0 8px;font-size:18px;color:#eaf0ff}
+    .card p{margin:0;color:#dbe6ff;line-height:1.6;font-size:14px}
+    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btn{
+      display:inline-block;padding:12px 16px;border-radius:12px;
+      text-decoration:none;font-weight:700;font-size:14px;
+      border:1px solid rgba(255,255,255,.12);
+      transition:.15s transform ease,.15s opacity ease;
     }
-
-    .btn-primary:hover {
-      background: #ffb300;
+    .btn:hover{transform: translateY(-1px);opacity:.95}
+    .btnPrimary{background:var(--accent);color:#101010;border:none}
+    .btnWA{background:var(--good);color:#06130a;border:none}
+    .btnGhost{background:rgba(255,255,255,.06);color:var(--text)}
+    .dangerNote{
+      margin-top:10px;
+      color:#ffe2e2;
+      background:rgba(255,77,79,.10);
+      border:1px solid rgba(255,77,79,.25);
+      padding:10px 12px;border-radius:12px;font-size:13px;line-height:1.5;
     }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.5);
-      color: white;
+    .timer{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px;
     }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.25);
+    .tbox{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:14px;padding:10px 10px;text-align:center;
     }
-
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 50px 20px;
+    .tval{font-size:22px;font-weight:800}
+    .tlab{font-size:12px;color:#cfe0ff;opacity:.85;margin-top:3px}
+    .meta{
+      margin-top:10px;font-size:13px;color:#cfe0ff;opacity:.9;line-height:1.5;
     }
-
-    .box {
-      background: white;
-      padding: 25px;
-      border-radius: 16px;
-      margin-bottom: 22px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    .list{margin:10px 0 0;padding-left:18px;color:#dbe6ff;line-height:1.75;font-size:14px}
+    .split{
+      display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;
     }
-
-    h2 {
-      color: #0d6efd;
-      margin-top: 0;
-      font-size: 22px;
+    @media (max-width: 900px){ .split{grid-template-columns:1fr} }
+    .proof{
+      border-left:4px solid var(--accent);
+      padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.05);
+      border-top:1px solid rgba(255,255,255,.08);
+      border-right:1px solid rgba(255,255,255,.08);
+      border-bottom:1px solid rgba(255,255,255,.08);
+      margin-top:10px;
+      color:#eaf0ff;font-size:14px;line-height:1.65;
     }
-
-    p {
-      line-height: 1.7;
-      font-size: 15px;
+    .faq{margin-top:16px}
+    .faq details{
+      background:rgba(255,255,255,.05);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:14px;padding:12px 12px;margin-bottom:10px;
     }
-
-    ul {
-      padding-left: 20px;
-      line-height: 1.8;
-      font-size: 15px;
+    .faq summary{cursor:pointer;font-weight:800;color:#eaf0ff}
+    .faq p{margin:8px 0 0;color:#dbe6ff}
+    footer{
+      margin-top:18px;
+      text-align:center;color:#cfe0ff;opacity:.85;font-size:12px;
     }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-      margin-top: 15px;
-    }
-
-    .card {
-      background: #f8f9fa;
-      padding: 18px;
-      border-radius: 14px;
-      border: 1px solid #e6e6e6;
-    }
-
-    .card h3 {
-      margin-top: 0;
-      color: #198754;
-      font-size: 16px;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #198754;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 8px;
-      font-size: 12px;
-      margin-bottom: 10px;
-    }
-
-    .faq-item {
-      margin-bottom: 15px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 12px;
-    }
-
-    .faq-item strong {
-      display: block;
-      margin-bottom: 5px;
-      color: #0d6efd;
-    }
-
-    footer {
-      background: #111;
-      color: #ddd;
-      text-align: center;
-      padding: 30px 15px;
-      font-size: 14px;
-    }
-
-    /* Floating WA Button */
-    .wa-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      padding: 14px 18px;
-      border-radius: 50px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-      z-index: 999;
-    }
-
-    .wa-float:hover {
-      background: #1ebe5b;
-    }
-
-    .small {
-      font-size: 13px;
-      opacity: 0.9;
+    .waFloat{
+      position:fixed;right:18px;bottom:18px;
+      background:var(--good);
+      color:#06130a;text-decoration:none;font-weight:900;
+      padding:14px 16px;border-radius:999px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.35);
+      border:0; z-index:999;
     }
   </style>
 </head>
-
 <body>
-
-  <header>
-    <h1>3i Reborn - Istikmal Syariah</h1>
-    <p>
-      Solusi perlindungan keluarga berbasis syariah + peluang penghasilan tambahan  
-      dengan sistem komunitas, mentoring, dan pembinaan leader.
-    </p>
-
-    <div class="cta-area">
-      <a class="btn btn-primary" 
-         href="https://wa.me/6285218453131?text=Halo%20Admin%20Nganggur%20Preneur%20Akademi,%20saya%20mau%20konsultasi%20tentang%203i%20Reborn%20Istikmal%20Syariah." 
-         target="_blank">
-        Konsultasi Gratis Sekarang
-      </a>
-
-      <a class="btn btn-secondary" 
-         href="https://wa.me/6282240001731?text=Halo,%20saya%20mau%20follow%20up%20info%203i%20Reborn%20Istikmal%20Syariah." 
-         target="_blank">
-        WA Follow Up
-      </a>
-    </div>
-
-    <p class="small">📌 Admin Resmi: Nganggur Preneur Akademi</p>
-  </header>
-
-  <section>
-    <div class="box">
-      <span class="badge">FAKTA LAPANGAN</span>
-      <h2>Kenapa Banyak Orang Tidak Mau Join?</h2>
-      <ul>
-        <li>Trauma terhadap MLM / bisnis jaringan sebelumnya.</li>
-        <li>Takut tidak bisa ngajak orang atau tidak pede bicara.</li>
-        <li>Kurang paham konsep proteksi & investasi syariah.</li>
-        <li>Belum percaya karena belum lihat bukti nyata.</li>
-        <li>Merasa belum butuh atau masih fokus kebutuhan harian.</li>
-      </ul>
-    </div>
-
-    <div class="box">
-      <span class="badge">ALASAN UTAMA</span>
-      <h2>Kenapa Orang Akhirnya Mau Join?</h2>
+  <div class="wrap">
+    <div class="hero">
+      <div class="topline">
+        <span class="pill">🔥 Zoom 3iLC (WIB / Asia-Jakarta)</span>
+        <span class="pill">✅ Konsultasi Admin</span>
+        <span class="pill">✅ Follow Up Cepat</span>
+      </div>
+      <h1>Kalau kamu masih “mikir-mikir”… biasanya kamu akan tetap di titik yang sama.</h1>
+      <p class="sub">
+        Kamu nggak perlu jadi jago ngomong. Kamu nggak perlu punya banyak relasi.
+        Yang kamu butuh cuma 1 hal: <b>datang ke Zoom</b> dan ikuti sistemnya.
+        Sisanya? <b>dibimbing</b>.
+      </p>
 
       <div class="grid">
+        <!-- LEFT -->
         <div class="card">
-          <h3>💰 Butuh Penghasilan Tambahan</h3>
-          <p>Banyak orang capek kerja keras tapi hidup tetap segitu-gitu aja.</p>
+          <h2>⏳ Countdown ke Zoom Terdekat</h2>
+          <p id="nextInfo">Menghitung jadwal Zoom terdekat (WIB)...</p>
+
+          <div class="timer" aria-label="Countdown Timer">
+            <div class="tbox"><div class="tval" id="dd">00</div><div class="tlab">Hari</div></div>
+            <div class="tbox"><div class="tval" id="hh">00</div><div class="tlab">Jam</div></div>
+            <div class="tbox"><div class="tval" id="mm">00</div><div class="tlab">Menit</div></div>
+            <div class="tbox"><div class="tval" id="ss">00</div><div class="tlab">Detik</div></div>
+          </div>
+
+          <div class="meta">
+            <b>Jadwal Zoom 3iLC:</b>
+            <ul class="list">
+              <li>Senin — 19:00 WIB</li>
+              <li>Rabu — 19:00 WIB <span style="color:var(--muted)">(Minggu ke-2 & ke-4 ada tambahan 14:00 WIB)</span></li>
+              <li>Jum’at — 19:00 WIB</li>
+            </ul>
+          </div>
+
+          <div class="dangerNote">
+            ⚠️ <b>Warning jujur:</b> yang sering gagal itu bukan karena sistemnya,
+            tapi karena <b>tidak hadir Zoom</b>, tidak follow up, dan nunggu motivasi dulu.
+            Kalau kamu hadir Zoom, kamu sudah beda 80% dari yang cuma “penasaran”.
+          </div>
+
+          <div class="ctaRow">
+            <a class="btn btnWA" target="_blank"
+               href="https://wa.me/6285218453131?text=Halo%20Admin%20Nganggur%20Preneur%20Akademi,%20saya%20mau%20ikut%20Zoom%203iLC%20dan%20minta%20panduan%20mulai%20dari%20nol.">
+              Chat Admin (Masuk Zoom)
+            </a>
+            <a class="btn btnPrimary" target="_blank"
+               href="https://wa.me/6282240001731?text=Halo,%20saya%20mau%20follow%20up%20info%203iLC%20dan%20minta%20next%20step%20yang%20harus%20saya%20lakukan.">
+              WA Follow Up (Biar Dibimbing)
+            </a>
+            <a class="btn btnGhost" target="_blank"
+               href="https://wa.me/6285218453131?text=Halo%20Admin,%20boleh%20minta%20ringkasan%20materi%20Zoom%203iLC%20dan%20alur%20gabung%203i%20Reborn%20Istikmal%20Syariah?">
+              Minta Ringkasan & Alur
+            </a>
+          </div>
         </div>
 
+        <!-- RIGHT -->
         <div class="card">
-          <h3>🕌 Konsep Syariah & Halal</h3>
-          <p>Orang ingin sistem keuangan yang lebih tenang dan jauh dari riba.</p>
-        </div>
+          <h2>🎯 Buat kamu yang serius naik kelas</h2>
+          <p>
+            Kamu boleh skeptis. Tapi coba jawab jujur:
+            <b>kalau cara lama berhasil, kenapa kamu masih cari info seperti ini?</b>
+          </p>
 
+          <div class="proof">
+            <b>3 keputusan yang biasanya bikin hidup stuck:</b><br/>
+            1) Nunda, nunggu “waktu pas”.<br/>
+            2) Nunggu yakin 100% dulu baru mulai.<br/>
+            3) Takut dinilai orang — padahal yang bayarin hidup kamu siapa?
+          </div>
+
+          <div class="proof">
+            <b>Yang kamu lakukan sekarang cuma 2 langkah:</b><br/>
+            ✅ Hadir Zoom 3iLC<br/>
+            ✅ Chat Admin untuk dipandu (biar nggak bingung)
+          </div>
+
+          <div class="ctaRow">
+            <a class="btn btnPrimary" target="_blank"
+               href="https://wa.me/6285218453131?text=Halo%20Admin,%20tolong%20daftarkan%20saya%20untuk%20Zoom%203iLC%20terdekat.%20Saya%20siap%20ikut%20arahan.">
+              Saya Siap, Daftarkan Zoom
+            </a>
+            <a class="btn btnGhost" target="_blank"
+               href="https://wa.me/6282240001731?text=Halo,%20saya%20mau%20follow%20up%20dan%20minta%20to-do%20list%207%20hari%20pertama%20biar%20cepat%20hasil.">
+              Minta To-Do List 7 Hari
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="split">
         <div class="card">
-          <h3>📌 Ada Bukti Nyata</h3>
-          <p>Claim cair, income leader, komunitas aktif, dan testimoni real.</p>
+          <h2>✅ Kenapa orang akhirnya join?</h2>
+          <ul class="list">
+            <li>Mereka capek kerja keras tapi hasilnya segitu-gitu aja.</li>
+            <li>Mereka pengen sistem syariah/halal & komunitas positif.</li>
+            <li>Mereka butuh mentor, bukan cuma “diajak daftar”.</li>
+            <li>Mereka lihat bukti, bukan omong kosong.</li>
+          </ul>
         </div>
-
         <div class="card">
-          <h3>🤝 Ada Komunitas & Mentoring</h3>
-          <p>Bukan dilepas, tapi dibimbing sampai bisa dan naik level.</p>
+          <h2>❌ Kenapa banyak yang nggak jadi?</h2>
+          <ul class="list">
+            <li>Kebanyakan mikir, kurang gerak.</li>
+            <li>Takut mulai karena tidak pede.</li>
+            <li>Mau hasil cepat tapi nggak mau proses.</li>
+            <li>Nunggu “percaya” dulu, padahal percaya muncul setelah jalan.</li>
+          </ul>
         </div>
       </div>
-    </div>
 
-    <div class="box">
-      <span class="badge">SOLUSI STRATEGIS</span>
-      <h2>Solusi Untuk Orang yang Belum Mau Join</h2>
-      <p>
-        Orang yang menolak bukan berarti tidak cocok.  
-        Mereka hanya <b>belum siap</b> atau <b>belum paham</b>.
-      </p>
+      <div class="card faq">
+        <h2>FAQ Singkat (biar nggak muter di kepala)</h2>
+        <details>
+          <summary>Kalau saya nggak jago ngomong, bisa?</summary>
+          <p>Bisa. Kamu pakai script + dibimbing follow up. Yang penting hadir Zoom dan praktek kecil tiap hari.</p>
+        </details>
+        <details>
+          <summary>Harus punya banyak relasi dulu?</summary>
+          <p>Nggak. Mulai dari circle kecil. Fokus proses, nanti jaringan kebentuk pelan-pelan.</p>
+        </details>
+        <details>
+          <summary>Kalau saya masih ragu, langkah paling aman apa?</summary>
+          <p>Datang Zoom dulu. Dengerin. Tanya. Baru ambil keputusan. Yang rugi itu yang nggak ambil langkah sama sekali.</p>
+        </details>
 
-      <ul>
-        <li>Mulai dari edukasi dulu, bukan maksa join.</li>
-        <li>Tawarkan opsi jadi nasabah dulu (proteksi keluarga).</li>
-        <li>Bangun trust lewat cerita nyata dan testimoni.</li>
-        <li>Follow up halus, jangan agresif.</li>
-        <li>Gunakan pendekatan kebutuhan: keluarga, kesehatan, masa depan anak.</li>
-      </ul>
-    </div>
-
-    <div class="box">
-      <span class="badge">LEADERSHIP</span>
-      <h2>Strategi Mempertahankan Member Agar Jadi Leader</h2>
-      <ul>
-        <li><b>Quick Win 7 Hari:</b> bantu member dapat hasil kecil (closing/presentasi).</li>
-        <li><b>SOP Jelas:</b> script, cara follow up, cara presentasi, langkah harian.</li>
-        <li><b>Bonding Tim:</b> buat mereka merasa dihargai dan didukung.</li>
-        <li><b>Target Realistis:</b> fokus pada aktivitas, bukan hanya hasil.</li>
-        <li><b>Recognition:</b> apresiasi progress sekecil apapun.</li>
-      </ul>
-    </div>
-
-    <div class="box">
-      <span class="badge">FAQ</span>
-      <h2>Pertanyaan yang Sering Ditanyakan</h2>
-
-      <div class="faq-item">
-        <strong>Apakah ini MLM?</strong>
-        <p>
-          Ini program berbasis sistem komunitas. Fokusnya proteksi syariah + peluang income dari edukasi & tim.
-        </p>
+        <div class="ctaRow">
+          <a class="btn btnWA" target="_blank"
+             href="https://wa.me/6285218453131?text=Halo%20Admin%20Nganggur%20Preneur%20Akademi,%20saya%20mau%20ikut%20Zoom%203iLC.%20Mohon%20link%20Zoom%20dan%20panduan%20persiapan.">
+            Ambil Link Zoom + Panduan
+          </a>
+          <a class="btn btnPrimary" target="_blank"
+             href="https://wa.me/6282240001731?text=Halo,%20saya%20mau%20follow%20up%20setelah%20Zoom.%20Mohon%20dibantu%20langkah%20selanjutnya.">
+            Follow Up Setelah Zoom
+          </a>
+        </div>
       </div>
 
-      <div class="faq-item">
-        <strong>Kalau saya tidak pandai bicara, bisa?</strong>
-        <p>
-          Bisa. Kamu akan dibimbing dengan script, mentoring, dan sistem follow up.
-        </p>
-      </div>
-
-      <div class="faq-item">
-        <strong>Harus punya banyak teman dulu?</strong>
-        <p>
-          Tidak. Kamu cukup mulai dari circle kecil, lalu belajar membangun jaringan perlahan.
-        </p>
-      </div>
-
-      <div class="faq-item">
-        <strong>Apakah ada training?</strong>
-        <p>
-          Ada. Kamu akan masuk komunitas pembinaan agar berkembang sampai level leader.
-        </p>
-      </div>
+      <footer>
+        © 2026 — 3iLC | 3i Reborn / Istikmal Syariah — WIB (Asia/Jakarta)<br/>
+        Admin: 6285218453131 · Follow Up: 6282240001731
+      </footer>
     </div>
+  </div>
 
-    <div class="box" style="text-align:center;">
-      <h2>Siap Mulai Perubahan?</h2>
-      <p>
-        Kalau kamu serius ingin membangun masa depan finansial yang lebih aman dan halal,  
-        kamu bisa mulai dari konsultasi dulu.
-      </p>
-
-      <a class="btn btn-primary" 
-         href="https://wa.me/6285218453131?text=Halo%20Admin%20Nganggur%20Preneur%20Akademi,%20saya%20mau%20konsultasi%20tentang%203i%20Reborn%20Istikmal%20Syariah." 
-         target="_blank">
-        Klik Konsultasi Sekarang
-      </a>
-    </div>
-  </section>
-
-  <footer>
-    © 2026 - 3i Reborn | Istikmal Syariah <br>
-    Admin: Nganggur Preneur Akademi <br>
-    Konsultasi via WhatsApp
-  </footer>
-
-  <!-- Floating WA Button -->
-  <a class="wa-float"
-     href="https://wa.me/6285218453131?text=Halo%20Admin%20Nganggur%20Preneur%20Akademi,%20saya%20mau%20konsultasi%20tentang%203i%20Reborn%20Istikmal%20Syariah."
-     target="_blank">
+  <a class="waFloat" target="_blank"
+     href="https://wa.me/6285218453131?text=Halo%20Admin%20Nganggur%20Preneur%20Akademi,%20saya%20mau%20ikut%20Zoom%203iLC%20terdekat.%20Tolong%20info%20link%20Zoom.">
     💬 Chat Admin
   </a>
 
+  <script>
+    // ====== Countdown to next 3iLC meeting (WIB / Asia-Jakarta) ======
+    // Schedule rules:
+    // - Monday 19:00 WIB
+    // - Wednesday 19:00 WIB
+    // - Wednesday week 2 & 4: additional 14:00 WIB
+    // - Friday 19:00 WIB
+    //
+    // Implementation notes:
+    // - We compute "now" in Asia/Jakarta using Intl.DateTimeFormat parts.
+    // - Then build candidate datetimes in local (wib) and pick the soonest future one.
+
+    const TZ = "Asia/Jakarta";
+
+    function getNowWIBParts() {
+      const parts = new Intl.DateTimeFormat("en-US", {
+        timeZone: TZ,
+        year: "numeric", month: "2-digit", day: "2-digit",
+        hour: "2-digit", minute: "2-digit", second: "2-digit",
+        hour12: false,
+        weekday: "short"
+      }).formatToParts(new Date());
+
+      const obj = {};
+      for (const p of parts) obj[p.type] = p.value;
+      return obj;
+    }
+
+    function wibToUTCDate(year, month, day, hour, minute, second) {
+      // WIB is UTC+7. Convert WIB -> UTC by subtracting 7 hours.
+      // Build a UTC timestamp safely.
+      const utcMillis = Date.UTC(year, month - 1, day, hour - 7, minute, second);
+      return new Date(utcMillis);
+    }
+
+    function getWeekOfMonth(year, month, day) {
+      // Week of month: 1..5 based on day-of-month grouping (1-7=1, 8-14=2, 15-21=3, 22-28=4, 29-31=5)
+      return Math.ceil(day / 7);
+    }
+
+    function buildCandidatesFrom(nowUTC) {
+      // Read current WIB date parts
+      const p = getNowWIBParts();
+      const y = parseInt(p.year, 10);
+      const m = parseInt(p.month, 10);
+      const d = parseInt(p.day, 10);
+
+      // We'll scan the next 14 days for eligible meeting times.
+      const candidates = [];
+
+      for (let addDays = 0; addDays <= 14; addDays++) {
+        // Create a WIB date by shifting day in UTC representation:
+        // We'll use an anchor "today WIB midnight" -> UTC and then add days.
+        const todayMidnightUTC = wibToUTCDate(y, m, d, 0, 0, 0);
+        const dayUTC = new Date(todayMidnightUTC.getTime() + addDays * 24 * 60 * 60 * 1000);
+
+        // Extract WIB weekday and date for that shifted day
+        const dp = new Intl.DateTimeFormat("en-US", {
+          timeZone: TZ,
+          year: "numeric", month: "2-digit", day: "2-digit",
+          weekday: "short",
+          hour12: false
+        }).formatToParts(dayUTC);
+        const obj = {};
+        for (const x of dp) obj[x.type] = x.value;
+
+        const yy = parseInt(obj.year, 10);
+        const mm = parseInt(obj.month, 10);
+        const dd = parseInt(obj.day, 10);
+        const wd = obj.weekday; // Mon, Tue, Wed, Thu, Fri, Sat, Sun
+
+        const wom = getWeekOfMonth(yy, mm, dd);
+
+        // Base weekly meetings
+        if (wd === "Mon") candidates.push({ yy, mm, dd, hh: 19, mi: 0, label: "Senin 19:00 WIB" });
+        if (wd === "Wed") candidates.push({ yy, mm, dd, hh: 19, mi: 0, label: "Rabu 19:00 WIB" });
+        if (wd === "Fri") candidates.push({ yy, mm, dd, hh: 19, mi: 0, label: "Jum'at 19:00 WIB" });
+
+        // Additional Wednesday slot on week 2 and 4
+        if (wd === "Wed" && (wom === 2 || wom === 4)) {
+          candidates.push({ yy, mm, dd, hh: 14, mi: 0, label: "Rabu (Minggu ke-" + wom + ") 14:00 WIB" });
+        }
+      }
+
+      // Convert to UTC Date objects and keep those in the future
+      const future = candidates.map(c => {
+        const dtUTC = wibToUTCDate(c.yy, c.mm, c.dd, c.hh, c.mi, 0);
+        return { ...c, dtUTC };
+      }).filter(c => c.dtUTC.getTime() > nowUTC.getTime());
+
+      // Sort soonest
+      future.sort((a,b) => a.dtUTC - b.dtUTC);
+      return future;
+    }
+
+    function pad2(n){ return String(n).padStart(2,"0"); }
+
+    let nextMeeting = null;
+
+    function initNextMeeting() {
+      const nowUTC = new Date();
+      const futures = buildCandidatesFrom(nowUTC);
+      nextMeeting = futures.length ? futures[0] : null;
+
+      const infoEl = document.getElementById("nextInfo");
+      if (!nextMeeting) {
+        infoEl.textContent = "Jadwal belum ditemukan. Silakan chat Admin untuk info Zoom terbaru.";
+        return;
+      }
+
+      // Format date WIB nicely
+      const showUTC = nextMeeting.dtUTC;
+      const fmt = new Intl.DateTimeFormat("id-ID", {
+        timeZone: TZ,
+        weekday: "long",
+        year: "numeric", month: "long", day: "numeric",
+        hour: "2-digit", minute: "2-digit",
+        hour12: false
+      });
+      infoEl.innerHTML = `<b>Next:</b> ${nextMeeting.label}<br/><span style="color:#cfe0ff;opacity:.9">${fmt.format(showUTC)}</span>`;
+    }
+
+    function tick() {
+      if (!nextMeeting) return;
+
+      const now = new Date();
+      let diff = nextMeeting.dtUTC.getTime() - now.getTime();
+
+      // If passed, re-init to next
+      if (diff <= 0) {
+        initNextMeeting();
+        return;
+      }
+
+      const sec = Math.floor(diff / 1000);
+      const days = Math.floor(sec / 86400);
+      const hrs = Math.floor((sec % 86400) / 3600);
+      const mins = Math.floor((sec % 3600) / 60);
+      const secs = sec % 60;
+
+      document.getElementById("dd").textContent = pad2(days);
+      document.getElementById("hh").textContent = pad2(hrs);
+      document.getElementById("mm").textContent = pad2(mins);
+      document.getElementById("ss").textContent = pad2(secs);
+    }
+
+    initNextMeeting();
+    tick();
+    setInterval(tick, 1000);
+    // Re-evaluate every 5 minutes to keep schedule accurate across long open tabs
+    setInterval(initNextMeeting, 5 * 60 * 1000);
+  </script>
 </body>
 </html>
