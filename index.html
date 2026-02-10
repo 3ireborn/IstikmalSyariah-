@@ -14,18 +14,59 @@
       color: #222;
     }
 
+    /* NAVBAR */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(13,110,253,0.95);
+      backdrop-filter: blur(6px);
+    }
+    .nav-wrap {
+      max-width: 1100px;
+      margin: auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .nav-brand a {
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+    .nav-menu a {
+      color: #eaf2ff;
+      text-decoration: none;
+      margin-left: 14px;
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .nav-menu a:hover { text-decoration: underline; }
+    .nav-highlight {
+      background: #ffc107;
+      color: #000 !important;
+      padding: 6px 12px;
+      border-radius: 999px;
+      text-decoration: none !important;
+    }
+    @media (max-width: 780px){
+      .nav-wrap { flex-wrap: wrap; justify-content: center; }
+      .nav-menu { width: 100%; display: flex; justify-content: center; flex-wrap: wrap; }
+      .nav-menu a { margin: 6px 8px 0; }
+    }
+
     header {
       background: linear-gradient(135deg, #0d6efd, #084298);
       color: white;
       padding: 70px 20px;
       text-align: center;
     }
-
-    header h1 {
-      font-size: 34px;
-      margin: 0;
-    }
-
+    header h1 { font-size: 34px; margin: 0; }
     header p {
       max-width: 860px;
       margin: 15px auto;
@@ -34,10 +75,7 @@
       opacity: 0.95;
     }
 
-    .cta-area {
-      margin-top: 25px;
-    }
-
+    .cta-area { margin-top: 25px; }
     .btn {
       display: inline-block;
       padding: 13px 26px;
@@ -47,11 +85,7 @@
       margin: 8px;
       transition: 0.2s;
     }
-
-    .btn-primary {
-      background: #ffc107;
-      color: #000;
-    }
+    .btn-primary { background: #ffc107; color: #000; }
     .btn-primary:hover { background: #ffb300; }
 
     .btn-secondary {
@@ -61,12 +95,14 @@
     }
     .btn-secondary:hover { background: rgba(255,255,255,0.25); }
 
+    .btn-dark { background: #0d6efd; color: #fff; }
+    .btn-dark:hover { background: #0b5ed7; }
+
     section {
       max-width: 1000px;
       margin: auto;
       padding: 50px 20px;
     }
-
     .box {
       background: white;
       padding: 25px;
@@ -75,14 +111,8 @@
       box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     }
 
-    h2 {
-      color: #0d6efd;
-      margin-top: 0;
-      font-size: 22px;
-    }
-
+    h2 { color: #0d6efd; margin-top: 0; font-size: 22px; }
     p { line-height: 1.7; font-size: 15px; }
-
     ul { padding-left: 20px; line-height: 1.8; font-size: 15px; }
 
     .grid {
@@ -91,19 +121,13 @@
       gap: 18px;
       margin-top: 15px;
     }
-
     .card {
       background: #f8f9fa;
       padding: 18px;
       border-radius: 14px;
       border: 1px solid #e6e6e6;
     }
-
-    .card h3 {
-      margin-top: 0;
-      color: #198754;
-      font-size: 16px;
-    }
+    .card h3 { margin-top: 0; color: #198754; font-size: 16px; }
 
     .badge {
       display: inline-block;
@@ -115,38 +139,13 @@
       margin-bottom: 10px;
     }
 
-    .faq-item {
-      margin-bottom: 15px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 12px;
-    }
-    .faq-item strong {
-      display: block;
-      margin-bottom: 5px;
-      color: #0d6efd;
-    }
-
-    footer {
-      background: #111;
-      color: #ddd;
-      text-align: center;
-      padding: 30px 15px;
-      font-size: 14px;
-    }
-
     /* Countdown UI */
-    .countdown-wrap {
-      margin-top: 14px;
-      display: grid;
-      gap: 14px;
-    }
-
+    .countdown-wrap { margin-top: 14px; display: grid; gap: 14px; }
     .timer {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 12px;
     }
-
     .tbox {
       background: #ffffff;
       border: 1px solid #e6e6e6;
@@ -155,7 +154,6 @@
       text-align: center;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
-
     .tval { font-size: 24px; font-weight: 900; }
     .tlab { font-size: 12px; color: #666; margin-top: 4px; }
 
@@ -167,6 +165,21 @@
       border-radius: 14px;
       padding: 12px 14px;
       line-height: 1.6;
+    }
+
+    .faq-item {
+      margin-bottom: 15px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 12px;
+    }
+    .faq-item strong { display: block; margin-bottom: 5px; color: #0d6efd; }
+
+    footer {
+      background: #111;
+      color: #ddd;
+      text-align: center;
+      padding: 30px 15px;
+      font-size: 14px;
     }
 
     /* Floating WA Button */
@@ -184,13 +197,25 @@
       z-index: 999;
     }
     .wa-float:hover { background: #1ebe5b; }
-
     .small { font-size: 13px; opacity: 0.9; }
-
   </style>
 </head>
 
 <body>
+
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="nav-wrap">
+      <div class="nav-brand">
+        <a href="index.html">3i Reborn • Istikmal Syariah</a>
+      </div>
+      <div class="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="#zoom">Jadwal Zoom</a>
+        <a href="anti-malas.html" class="nav-highlight">Anti Males 🔥</a>
+      </div>
+    </div>
+  </nav>
 
   <header>
     <h1>3i Reborn - Istikmal Syariah</h1>
@@ -219,13 +244,13 @@
   <section>
 
     <!-- ZOOM + COUNTDOWN -->
-    <div class="box">
+    <div class="box" id="zoom">
       <span class="badge">ZOOM 3iLC</span>
       <h2>Jadwal Zoom Meeting 3iLC (WIB)</h2>
 
       <ul>
         <li><b>Senin</b> — 19:00 WIB</li>
-        <li><b>Rabu</b> — 19:00 WIB <span style="color:#0d6efd;">(Minggu ke-2 & ke-4 ada tambahan 14:00 WIB)</span></li>
+        <li><b>Rabu</b> — 19:00 WIB <span style="color:#0d6efd;"><b>(Minggu ke-2 & ke-4 tambahan 14:00 WIB)</b></span></li>
         <li><b>Jum'at</b> — 19:00 WIB</li>
       </ul>
 
@@ -246,7 +271,7 @@
             Minta Link Zoom ke Admin
           </a>
 
-          <a class="btn btn-secondary"
+          <a class="btn btn-dark"
              href="https://wa.me/6282240001731?text=Halo,%20saya%20mau%20follow%20up%20untuk%20ikut%20Zoom%203iLC%20terdekat.%20Mohon%20dibantu%20step%20selanjutnya."
              target="_blank">
             Follow Up (Biar Dipandu)
@@ -255,7 +280,18 @@
       </div>
     </div>
 
-    <!-- ORIGINAL CONTENT (Premium) -->
+    <!-- tombol silang ke LP anti-malas -->
+    <div class="box" style="text-align:center;">
+      <h2>Masih Ragu?</h2>
+      <p>
+        Banyak yang bilang network marketing cuma buat orang malas.  
+        Aku jawab jujur & terbuka di halaman khusus 👇
+      </p>
+      <a class="btn btn-dark" href="anti-malas.html">
+        Baca: “Network Marketing = Orang Malas?”
+      </a>
+    </div>
+
     <div class="box">
       <span class="badge">FAKTA LAPANGAN</span>
       <h2>Kenapa Banyak Orang Tidak Mau Join?</h2>
@@ -296,22 +332,6 @@
     </div>
 
     <div class="box">
-      <span class="badge">SOLUSI STRATEGIS</span>
-      <h2>Solusi Untuk Orang yang Belum Mau Join</h2>
-      <p>
-        Orang yang menolak bukan berarti tidak cocok. Mereka hanya <b>belum siap</b> atau <b>belum paham</b>.
-      </p>
-
-      <ul>
-        <li>Mulai dari edukasi dulu, bukan memaksa join.</li>
-        <li>Tawarkan opsi jadi nasabah dulu (proteksi keluarga).</li>
-        <li>Bangun trust lewat cerita nyata dan testimoni.</li>
-        <li>Follow up halus, jangan agresif.</li>
-        <li>Gunakan pendekatan kebutuhan: keluarga, kesehatan, masa depan anak.</li>
-      </ul>
-    </div>
-
-    <div class="box">
       <span class="badge">LEADERSHIP</span>
       <h2>Strategi Mempertahankan Member Agar Jadi Leader</h2>
       <ul>
@@ -328,11 +348,6 @@
       <h2>Pertanyaan yang Sering Ditanyakan</h2>
 
       <div class="faq-item">
-        <strong>Apakah ada training?</strong>
-        <p>Ada. Kamu akan masuk komunitas pembinaan agar berkembang sampai level leader.</p>
-      </div>
-
-      <div class="faq-item">
         <strong>Kalau saya tidak pandai bicara, bisa?</strong>
         <p>Bisa. Kamu akan dibimbing dengan script, mentoring, dan sistem follow up.</p>
       </div>
@@ -340,6 +355,11 @@
       <div class="faq-item">
         <strong>Harus punya banyak teman dulu?</strong>
         <p>Tidak. Kamu cukup mulai dari circle kecil, lalu belajar membangun jaringan perlahan.</p>
+      </div>
+
+      <div class="faq-item">
+        <strong>Apakah ada training?</strong>
+        <p>Ada. Kamu akan masuk komunitas pembinaan agar berkembang sampai level leader.</p>
       </div>
     </div>
 
@@ -363,7 +383,6 @@
     Admin: 6285218453131 · Follow Up: 6282240001731
   </footer>
 
-  <!-- Floating WA Button -->
   <a class="wa-float"
      href="https://wa.me/6285218453131?text=Halo%20Admin%20Nganggur%20Preneur%20Akademi,%20saya%20mau%20ikut%20Zoom%203iLC%20terdekat.%20Tolong%20info%20link%20Zoom."
      target="_blank">
@@ -371,7 +390,6 @@
   </a>
 
   <script>
-    // ===== Countdown to next 3iLC meeting (WIB / Asia-Jakarta) =====
     const TZ = "Asia/Jakarta";
 
     function getNowWIBParts() {
@@ -389,14 +407,11 @@
     }
 
     function wibToUTCDate(year, month, day, hour, minute, second) {
-      // WIB = UTC+7 -> convert to UTC by subtracting 7 hours
       const utcMillis = Date.UTC(year, month - 1, day, hour - 7, minute, second);
       return new Date(utcMillis);
     }
 
-    function getWeekOfMonth(day) {
-      return Math.ceil(day / 7); // 1..5
-    }
+    function getWeekOfMonth(day) { return Math.ceil(day / 7); }
 
     function buildCandidates(nowUTC) {
       const p = getNowWIBParts();
@@ -422,14 +437,12 @@
         const yy = parseInt(obj.year, 10);
         const mm = parseInt(obj.month, 10);
         const dd = parseInt(obj.day, 10);
-        const wd = obj.weekday; // Mon Tue Wed Thu Fri Sat Sun
+        const wd = obj.weekday;
 
-        // base schedule
         if (wd === "Mon") candidates.push({ yy, mm, dd, hh: 19, mi: 0, label: "Senin 19:00 WIB" });
         if (wd === "Wed") candidates.push({ yy, mm, dd, hh: 19, mi: 0, label: "Rabu 19:00 WIB" });
         if (wd === "Fri") candidates.push({ yy, mm, dd, hh: 19, mi: 0, label: "Jum'at 19:00 WIB" });
 
-        // extra Wed slot week 2 & 4 at 14:00
         if (wd === "Wed") {
           const wom = getWeekOfMonth(dd);
           if (wom === 2 || wom === 4) {
@@ -438,11 +451,10 @@
         }
       }
 
-      const future = candidates.map(c => ({ ...c, dtUTC: wibToUTCDate(c.yy, c.mm, c.dd, c.hh, c.mi, 0) }))
+      return candidates
+        .map(c => ({ ...c, dtUTC: wibToUTCDate(c.yy, c.mm, c.dd, c.hh, c.mi, 0) }))
         .filter(c => c.dtUTC.getTime() > nowUTC.getTime())
         .sort((a,b) => a.dtUTC - b.dtUTC);
-
-      return future;
     }
 
     function pad2(n){ return String(n).padStart(2,"0"); }
@@ -468,7 +480,9 @@
         hour12: false
       });
 
-      infoEl.innerHTML = `<b>Next:</b> ${nextMeeting.label}<br><span style="color:#0d6efd;"><b>${fmt.format(nextMeeting.dtUTC)}</b></span>`;
+      infoEl.innerHTML =
+        `<b>Next:</b> ${nextMeeting.label}<br>` +
+        `<span style="color:#0d6efd;"><b>${fmt.format(nextMeeting.dtUTC)}</b></span>`;
     }
 
     function tick(){
@@ -476,7 +490,6 @@
 
       const now = new Date();
       let diff = nextMeeting.dtUTC.getTime() - now.getTime();
-
       if (diff <= 0) { initNextMeeting(); return; }
 
       const sec = Math.floor(diff / 1000);
@@ -496,6 +509,5 @@
     setInterval(tick, 1000);
     setInterval(initNextMeeting, 5 * 60 * 1000);
   </script>
-
 </body>
-            </html>
+      </html>
