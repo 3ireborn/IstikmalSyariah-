@@ -54,7 +54,7 @@
       border-radius: 999px;
       text-decoration: none !important;
     }
-    @media (max-width: 780px){
+    @media (max-width: 820px){
       .nav-wrap { flex-wrap: wrap; justify-content: center; }
       .nav-menu { width: 100%; display: flex; justify-content: center; flex-wrap: wrap; }
       .nav-menu a { margin: 6px 8px 0; }
@@ -212,7 +212,8 @@
       <div class="nav-menu">
         <a href="index.html">Home</a>
         <a href="#zoom">Jadwal Zoom</a>
-        <a href="anti-malas.html" class="nav-highlight">Anti Males 🔥</a>
+        <a href="anti-malas.html">Anti Males 🔥</a>
+        <a href="trauma-mlm.html" class="nav-highlight">Trauma MLM 🤍</a>
       </div>
     </div>
   </nav>
@@ -280,16 +281,17 @@
       </div>
     </div>
 
-    <!-- tombol silang ke LP anti-malas -->
+    <!-- tombol silang -->
     <div class="box" style="text-align:center;">
-      <h2>Masih Ragu?</h2>
-      <p>
-        Banyak yang bilang network marketing cuma buat orang malas.  
-        Aku jawab jujur & terbuka di halaman khusus 👇
+      <h2>Pilih yang sesuai kondisi kamu</h2>
+      <p style="max-width:820px;margin:0 auto;">
+        Kalau kamu masih ragu karena stigma “orang malas”, baca halaman Anti Males.
+        Kalau kamu trauma cara ngajak yang dulu, baca halaman Trauma MLM.
       </p>
-      <a class="btn btn-dark" href="anti-malas.html">
-        Baca: “Network Marketing = Orang Malas?”
-      </a>
+      <div>
+        <a class="btn btn-dark" href="anti-malas.html">Baca: Anti Males 🔥</a>
+        <a class="btn btn-primary" href="trauma-mlm.html">Baca: Trauma MLM 🤍</a>
+      </div>
     </div>
 
     <div class="box">
@@ -412,6 +414,7 @@
     }
 
     function getWeekOfMonth(day) { return Math.ceil(day / 7); }
+    function pad2(n){ return String(n).padStart(2,"0"); }
 
     function buildCandidates(nowUTC) {
       const p = getNowWIBParts();
@@ -456,8 +459,6 @@
         .filter(c => c.dtUTC.getTime() > nowUTC.getTime())
         .sort((a,b) => a.dtUTC - b.dtUTC);
     }
-
-    function pad2(n){ return String(n).padStart(2,"0"); }
 
     let nextMeeting = null;
 
@@ -510,4 +511,4 @@
     setInterval(initNextMeeting, 5 * 60 * 1000);
   </script>
 </body>
-      </html>
+                                  </html>
